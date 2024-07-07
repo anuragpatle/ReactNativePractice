@@ -1,8 +1,6 @@
-import { Text, StyleSheet, Image } from 'react-native';
+import { Text, StyleSheet, Image, View } from 'react-native';
 import { Product } from '../types';
-import {  View,  } from '../components/Themed';
 import Colors from '@/constants/Colors';
-import products from '@assets/data/products';
 
 export const defaultPizzaImage =  'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/food/peperoni.png';
 
@@ -13,7 +11,10 @@ type ProductListItemProps = {
 const ProductListItem = ({product}: ProductListItemProps) => {
   return (
     <View style={styles.container}>
-       <Image source={{uri: product.image || defaultPizzaImage}} style={styles.image} />
+       <Image source={{uri: product.image || defaultPizzaImage}} 
+       style={styles.image} 
+       resizeMode='contain'
+       />
       <Text style={styles.title}>{product.name}</Text>
       <Text style={styles.price}> ${product.price} </Text>
     </View>
@@ -26,7 +27,10 @@ export default ProductListItem
 const styles = StyleSheet.create({
   container: {
     backgroundColor: 'white',
-    padding: 10
+    padding: 10,
+    flex: 1,
+    borderRadius: 20,
+    maxWidth: '50%'
   },
   image: {
     width: '100%',
