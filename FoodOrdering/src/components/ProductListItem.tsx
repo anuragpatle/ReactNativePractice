@@ -1,8 +1,8 @@
 import { Text, StyleSheet, Image } from 'react-native';
 import { Product } from '../types';
 import {  View,  } from '../components/Themed';
-import Colors from '@/src/constants/Colors';
-import products from '@/assets/data/products';
+import Colors from '@/constants/Colors';
+import products from '@assets/data/products';
 
 export const defaultPizzaImage =  'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/food/peperoni.png';
 
